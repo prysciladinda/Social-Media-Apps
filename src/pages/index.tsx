@@ -1,4 +1,4 @@
-const App = () => {
+const Index = () => {
   return (
     <div className="App">
       <h1>test</h1>
@@ -6,4 +6,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Index;
