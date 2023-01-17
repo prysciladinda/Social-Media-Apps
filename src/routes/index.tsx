@@ -8,6 +8,7 @@ import Beranda from "../pages";
 import Login from "../pages/auth/Login";
 
 import Detail from "../pages/detail";
+import Aboutme from "../pages/aboutme";
 
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     path: "/detail",
     element: <Detail />,
   },
+  {
+    path: "/aboutme",
+    element: <Aboutme />,
+  }, 
   {
     path: "/login",
     element: <Login />,
