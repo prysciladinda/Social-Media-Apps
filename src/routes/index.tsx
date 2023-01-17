@@ -1,16 +1,23 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Index from "../pages";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import Beranda from "../pages";
+
 import Login from "../pages/auth/Login";
+
+import Detail from "../pages/detail";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Index />,
+    element: <Beranda />,
   },
   {
-    path: "/Beranda",
-    element: <Beranda />,
+    path: "/detail",
+    element: <Detail />,
   },
   {
     path: "/login",
