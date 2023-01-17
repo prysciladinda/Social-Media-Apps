@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from "../pages";
 import Beranda from "../pages";
+import Login from "../pages/auth/Login";
 
 const router = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
   {
     path: "/Beranda",
     element: <Beranda />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
