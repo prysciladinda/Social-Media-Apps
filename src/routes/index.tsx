@@ -1,6 +1,10 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import Index from "../pages";
-import Beranda from "../pages";
+import Beranda from "../pages/auth/login";
 
 const router = createBrowserRouter([
   {
@@ -8,7 +12,7 @@ const router = createBrowserRouter([
     element: <Index />,
   },
   {
-    path: "/Beranda",
+    path: "/Login",
     element: <Beranda />,
   },
 ]);
