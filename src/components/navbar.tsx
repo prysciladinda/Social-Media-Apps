@@ -4,7 +4,7 @@ import Abiasa from "../assets/Abiasa.png";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 flex justify-between px-6 shadow-[0px_10px_50px_0px_rgba(83,83,83,0.5)]">
+    <div className="navbar sticky top-0 z-50 bg-base-100 flex justify-between px-6 shadow-[0px_1px_40px_0px_rgba(83,83,83,0.5)]">
       <div className="w-auto">
         <div className="flex flex-row gap-1">
           <HiHome className="h-7 w-7 text-[#00715C] font-bold" />

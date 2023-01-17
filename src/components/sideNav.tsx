@@ -6,7 +6,6 @@ const SideNav = () => {
       <p className="text-[14px] font-semibold text-zinc-800] mb-4">
         Rekomendasi akun
       </p>
-
       <Avatar />
       <Avatar />
       <Avatar />
