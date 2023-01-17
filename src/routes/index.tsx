@@ -3,17 +3,17 @@ import {
   RouterProvider,
   Navigate,
 } from "react-router-dom";
-import Index from "../pages";
-import Beranda from "../pages/auth/login";
+import Beranda from "../pages";
+import Detail from "../pages/detail";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Index />,
+    element: <Beranda />,
   },
   {
-    path: "/Login",
-    element: <Beranda />,
+    path: "/detail",
+    element: <Detail />,
   },
 ]);
 

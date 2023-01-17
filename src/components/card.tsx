@@ -29,7 +29,7 @@ const Card = () => {
             <p className="text-[14px] text-zinc-400 pt-1">
               Add a comment . . . . . . .
             </p>
-            <p className="text-[14px] text-zinc-600 pt-1">View all comment</p>
+            <a className="text-[14px] text-zinc-600 pt-1">View all comment</a>
           </div>
         </div>
       </div>
