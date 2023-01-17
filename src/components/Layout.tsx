@@ -7,11 +7,8 @@ interface props {
 
 function Layout({ children }: props) {
   return (
-    <div className="w-full h-screen flex flex-col overflow-auto">
-      <Navbar />
-      <div className="h-full w-full bg-white bg-center bg-cover bg-no-repeat flex flex-col">
-        {children}
-      </div>
+    <div className="w-full h-screen overflow-auto">
+      <div className="h-full w-full bg-[#ACF9F2] overflow-auto">{children}</div>
     </div>
   );
 }
