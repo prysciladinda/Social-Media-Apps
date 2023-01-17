@@ -4,7 +4,11 @@ import {
   Navigate,
 } from "react-router-dom";
 import Beranda from "../pages";
+
+import Login from "../pages/auth/Login";
+
 import Detail from "../pages/detail";
+
 
 const router = createBrowserRouter([
   {
@@ -14,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/detail",
     element: <Detail />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
