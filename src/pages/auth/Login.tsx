@@ -14,10 +14,7 @@ function Login() {
       <div className="flex justify-end w-full h-20">
         <img className="h-full" src={logoAbiAsa} />
       </div>
-      <div
-        className="flex 
-       justify-center justify-items-center "
-      >
+      <div className="flex justify-center justify-items-center ">
         <div className="pt-12">
           <img className="pb-6" src={logoOrang} />
           <p className="text-center text-white border-b-4 border-dotted pt-4">
