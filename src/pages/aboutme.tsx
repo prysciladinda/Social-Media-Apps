@@ -1,4 +1,5 @@
 import Footer from "../components/footer";
+import Input from "../components/Input";
 import Layout from "../components/Layout";
 import Navbar from "../components/navbar";
 import SideNav from "../components/sideNav";
@@ -12,22 +13,40 @@ const Aboutme = () => {
           <SideNav />
         </div>
         <div className="col-span-6">
-          <div className="w-full bg-zinc-50 rounded-3xl shadow-lg text-center p-5">
+          <div className="flex flex-col items-center w-full bg-zinc-50 rounded-3xl shadow-lg text-center p-5">
             <p className="text-[24px] font-bold">About me</p>
 
-            <table>
-              <tbody className="w-20 bg-zinc-600 ">
-                <tr className="text-left">
-                  <td>Username</td>
-                  <td>Username</td>
+            <table className="w-9/12 mt-8 border-separate border-spacing-3">
+              <tbody className="text-left">
+                <tr>
+                  <td className="pl-16">Username :</td>
+                  <td className="item-center border rounded-full w-[15em]">
+                    <Input
+                      id="input_username"
+                      type="username"
+                      placeholder="Anette Black"
+                    />
+                  </td>
                 </tr>
-                <tr className="text-left">
-                  <td>E-mail</td>
-                  <td></td>
+                <tr>
+                  <td className="pl-16">E-mail :</td>
+                  <td className="item-center border rounded-full">
+                    <Input
+                      id="input_email"
+                      type="email"
+                      placeholder="anetteblack@gmail.com"
+                    />
+                  </td>
                 </tr>
-                <tr className="text-left">
-                  <td>Password</td>
-                  <td></td>
+                <tr>
+                  <td className="pl-16">Password :</td>
+                  <td className="item-center border rounded-full">
+                    <Input
+                      id="input_password"
+                      type="password"
+                      placeholder="**********"
+                    />
+                  </td>
                 </tr>
               </tbody>
             </table>
