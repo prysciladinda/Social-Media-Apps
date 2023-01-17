@@ -9,7 +9,7 @@ import Login from "../pages/auth/Login";
 
 import Detail from "../pages/detail";
 import Aboutme from "../pages/aboutme";
-
+import Register from "../pages/auth/Register";
 
 const router = createBrowserRouter([
   {
@@ -23,10 +23,14 @@ const router = createBrowserRouter([
   {
     path: "/aboutme",
     element: <Aboutme />,
-  }, 
+  },
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
 ]);
 
