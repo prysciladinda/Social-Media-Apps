@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import Beranda from "../pages";
 import Detail from "../pages/detail";
+import Aboutme from "../pages/aboutme";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/detail",
     element: <Detail />,
+  },
+  {
+    path: "/aboutme",
+    element: <Aboutme />,
   },
 ]);
 
