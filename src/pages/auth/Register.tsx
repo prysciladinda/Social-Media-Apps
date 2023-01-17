@@ -7,8 +7,9 @@ import logoAbiAsa from "../../assets/Abi-Asa.png";
 
 import { BsFillPersonFill } from "react-icons/bs";
 import { FaLock } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
-function Login() {
+function Register() {
   return (
     <Layout>
       <div
@@ -19,28 +20,30 @@ function Login() {
           className="flex 
         justify-around justify-items-center rounded-2xl  h-full pb-12 w-4/5 bg-white "
         >
-          <div className="pt-32 ">
+          <div className="pt-40 ">
             <img className="pb-8 pl-16 w-4/5" src={logoOrang} />
             <p className="text-center text-white border-b-4 border-dotted pt-4">
               {" "}
-              Enter your personal details
+              To keep connected with us
               <br />
-              and start journey with us
+              please login with your personal info
+              <br />
             </p>
-            <div className="flex justify-center pt-9">
-              <Button label="Sign Up" />
+            <div className="flex justify-center pt-20">
+              <Button label="Sign In" />
             </div>
           </div>
           <div className="w-2/5 ">
             <div className="flex pt-6  justify-end w-full h-20">
               <img className="h-9" src={logoAbiAsa} />
             </div>
-            <h1 className="text-center pb-4 text-4xl font-bold">Login</h1>
-            <p className="text-center text-xs text-slate-400 border-b-4 pb-4 border-dashed">
-              Login to make an post, access your profile, <br /> experience
-              special, and more!
+            <h1 className="text-center pt-4 text-3xl font-bold">
+              Create Account
+            </h1>
+            <p className="text-center text-xs text-slate-400 pb-4 border-b-4 border-dashed">
+              Create your Account and Enjoy Together
             </p>
-            <form className="flex flex-col pt-9 gap-4 min-w-[40%] ">
+            <form className="flex flex-col pt-8 gap-4 min-w-[40%] ">
               <p className="text-start text-slate-500">Username</p>
               <div className=" flex w-3/4 pl-4 flex-row gap-1 border items-center rounded-lg">
                 <BsFillPersonFill className="h-7 w-7 text-slate-400 " />
@@ -48,6 +51,15 @@ function Login() {
                   id="input-username"
                   type="username"
                   placeholder="Budi santoso"
+                />
+              </div>
+              <p className="text-start text-slate-500">E-mail</p>
+              <div className=" flex w-3/4 pl-4 flex-row gap-1 border items-center rounded-lg">
+                <MdEmail className="h-7 w-7 text-slate-400 " />
+                <Input
+                  id="input-username"
+                  type="email"
+                  placeholder=".......@gmail.com"
                 />
               </div>
               <p className="text-start text-slate-500">Password</p>
@@ -70,4 +82,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;

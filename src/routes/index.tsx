@@ -5,11 +5,12 @@ import {
 } from "react-router-dom";
 
 import Aboutme from "../pages/aboutme";
+import Register from "../pages/auth/Register";
 import Detail from "../pages/detail";
 import Profil from "../pages/profil";
 import Beranda from "../pages";
-
 import Login from "../pages/auth/Login";
+
 
 const router = createBrowserRouter([
   {
@@ -28,10 +29,13 @@ const router = createBrowserRouter([
     path: "/profil",
     element: <Profil />,
   },
-
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
 ]);
 
