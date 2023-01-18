@@ -1,4 +1,3 @@
-import React from "react";
 import Layout from "../../components/Layout";
 import Input from "../../components/Input";
 import Button from "../../components/buttonRegister";
@@ -6,11 +5,66 @@ import logoOrang from "../../assets/logo-orang.png";
 import logoAbiAsa from "../../assets/Abi-Asa.png";
 import { Link, useNavigate } from "react-router-dom";
 
-import { BsFillPersonFill } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
+import withReactContent from "sweetalert2-react-content";
+import React, { useState, useEffect } from "react";
+import { useCookies } from "react-cookie";
+import Swal from "../../utils/swal";
+import axios from "axios";
+// import { useDispatch } from "react";
 
 function Login() {
+  const [, setCookie] = useCookies(["token"]);
+  const MySwal = withReactContent(Swal);
+  const [disabled, setDisabled] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [password, setPassword] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  // const dispatch = useDispatch()
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (email && password) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+  }, [email, password]);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    setLoading(true);
+    e.preventDefault();
+    const body = {
+      email,
+      password,
+    };
+    axios
+      .post(
+        "https://app.swaggerhub.com/apis/griffinhenry07/socialmedia/1.0.0/login",
+        body
+      )
+      .then((res) => {
+        const { data, message } = res.data;
+        setCookie("token", data.token, { path: "/" });
+        // dispatch(handleAuth(true));
+        MySwal.fire({
+          title: "Success",
+          text: message,
+          showCancelButton: false,
+        });
+        navigate("/");
+      })
+      .catch((err) => {
+        const { data } = err.response;
+        MySwal.fire({
+          title: "Failed",
+          text: data.message,
+          showCancelButton: false,
+        });
+      })
+      .finally(() => setLoading(false));
+  };
   return (
     <Layout>
       <div
@@ -44,14 +98,18 @@ function Login() {
               Login to make an post, access your profile, <br /> experience
               special, and more!
             </p>
-            <form className="flex flex-col pt-9 gap-4 min-w-[40%] ">
-              <p className="text-start text-slate-500">Username</p>
+            <form
+              className="flex flex-col pt-9 gap-4 min-w-[40%] "
+              onSubmit={(e) => handleSubmit(e)}
+            >
+              <p className="text-start text-slate-500">E-mail</p>
               <div className=" flex w-3/4 pl-4 flex-row gap-1 border items-center rounded-lg">
-                <BsFillPersonFill className="h-7 w-7 text-slate-400 " />
+                <MdEmail className="h-7 w-7 text-slate-400 " />
                 <Input
                   id="input-username"
-                  type="username"
-                  placeholder="Budi santoso"
+                  type="email"
+                  placeholder=".......@gmail.com"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <p className="text-start text-slate-500">Password</p>
@@ -61,10 +119,15 @@ function Login() {
                   id="input-password"
                   type="password"
                   placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div className="flex justify-center pt-6">
-                <Button label="Submit" />
+                <Button
+                  id="btn-login"
+                  label="Login"
+                  loading={loading || disabled}
+                />
               </div>
             </form>
           </div>
