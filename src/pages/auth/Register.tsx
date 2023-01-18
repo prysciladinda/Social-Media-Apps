@@ -8,14 +8,20 @@ import Swal from "../../utils/swal";
 import Button from "../../components/buttonRegister";
 import logoOrang from "../../assets/logo-orang.png";
 import logoAbiAsa from "../../assets/Abi-Asa.png";
+
+import { Link, useNavigate } from "react-router-dom";
 import Layout from "../../components/Layout";
 import Input from "../../components/Input";
+
 
 import { BsFillPersonFill } from "react-icons/bs";
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 function Register() {
+
+  const navigate = useNavigate();
+
   const MySwal = WithReactContent(Swal);
   const navigate = useNavigate();
 
@@ -67,6 +73,7 @@ function Register() {
       .finally(() => setLoading(false));
   };
 
+
   return (
     <Layout>
       <div
@@ -87,12 +94,14 @@ function Register() {
               <br />
             </p>
             <div className="flex justify-center pt-20">
-              <Button label="Sign In" />
+              <Button label="Sign In" onClick={() => navigate("/login")} />
             </div>
           </div>
           <div className="w-2/5 ">
             <div className="flex pt-6  justify-end w-full h-20">
-              <img className="h-9" src={logoAbiAsa} />
+              <Link to="/">
+                <img className="h-9" src={logoAbiAsa} />
+              </Link>
             </div>
             <h1 className="text-center pt-4 text-3xl font-bold">
               Create Account

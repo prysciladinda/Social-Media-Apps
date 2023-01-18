@@ -1,29 +1,39 @@
 import { HiHome } from "react-icons/hi";
 import { CgProfile } from "react-icons/cg";
 import Abiasa from "../assets/Abiasa.png";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <div className="navbar sticky top-0 z-50 bg-base-100 flex justify-between px-6 shadow-[0px_1px_40px_0px_rgba(83,83,83,0.5)]">
       <div className="w-auto">
         <div className="flex flex-row gap-1">
           <HiHome className="h-7 w-7 text-[#00715C] font-bold" />
-          <p className="h-full text-[16px] font-bold text-[#00715C] pt-2 border-[rgb(0,113,92)] border-b-[2px]">
+          <Link
+            to="/"
+            className="h-full text-[16px] font-bold text-[#00715C] pt-2 border-[rgb(0,113,92)] border-b-[2px]"
+          >
             Beranda
-          </p>
+          </Link>
         </div>
         <div className="w-auto px-5">
           <div className="flex flex-row gap-1">
             <CgProfile className="h-7 w-7 text-[rgb(83,83,83)] font-bold" />
-            <p className="h-full text-[16px] font-bold text-[#535353] pt-2">
+            <Link
+              to="/profil"
+              className="h-full text-[16px] font-bold text-[#535353] pt-2"
+            >
               Profil
-            </p>
+            </Link>
           </div>
         </div>
       </div>
 
       <div className="mr-[6rem]">
-        <img className="w-36 pb-2" src={Abiasa} alt="Abiasa.png" />
+        <Link to="/">
+          <img className="w-36 pb-2" src={Abiasa} alt="Abiasa.png" />
+        </Link>
       </div>
 
       <div className="dropdown dropdown-end">
@@ -43,7 +53,9 @@ const Navbar = () => {
           className="menu menu-compact dropdown-content mt-3 shadow p-2 bg-base-100 rounded-box w-44"
         >
           <li>
-            <a className="justify-between">About Me</a>
+            <Link to="/aboutme" className="justify-between">
+              About Me
+            </Link>
           </li>
           <li>
             <a>Dark Mode</a>
