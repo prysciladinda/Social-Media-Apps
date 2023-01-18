@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../../components/Layout";
 import Input from "../../components/Input";
-import Button from "../../components/Button";
+import Button from "../../components/buttonRegister";
 import logoOrang from "../../assets/logo-orang.png";
 import logoAbiAsa from "../../assets/Abi-Asa.png";
 
