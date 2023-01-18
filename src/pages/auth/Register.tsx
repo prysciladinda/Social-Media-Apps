@@ -46,7 +46,8 @@ function Register() {
     };
 
     axios
-      .post("users", body)
+      .post("54.169.251.151/users", body)
+
       .then((res) => {
         const { message, data } = res.data;
         console.log(res.data); //console2

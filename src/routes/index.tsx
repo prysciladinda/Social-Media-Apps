@@ -14,6 +14,7 @@ import Profil from "../pages/profil";
 import Beranda from "../pages";
 import Login from "../pages/auth/Login";
 
+
 axios.defaults.baseURL =
   "https://vitserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/";
 

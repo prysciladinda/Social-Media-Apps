@@ -4,7 +4,7 @@ export default Swal.mixin({
   reverseButtons: true,
   confirmButtonColor: "#00715C",
   showCancelButton: true,
-  confirmButtonText: "#ffff",
+  // confirmButtonText: "#ffff",
   showClass: {
     popup: "animate__animated animate__fadeIn animate__faster",
   },
