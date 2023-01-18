@@ -46,7 +46,10 @@ function Register() {
     };
 
     axios
-      .post("54.169.251.151/users", body)
+      .post(
+        "https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/users",
+        body
+      )
 
       .then((res) => {
         const { message, data } = res.data;

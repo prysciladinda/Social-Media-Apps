@@ -41,7 +41,10 @@ function Login() {
       password,
     };
     axios
-      .post("54.169.251.151/login", body)
+      .post(
+        "https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/login",
+        body
+      )
       .then((res) => {
         const { data, message } = res.data;
         setCookie("token", data.token, { path: "/" });
