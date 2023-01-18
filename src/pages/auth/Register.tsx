@@ -45,7 +45,7 @@ function Register() {
     };
 
     axios
-      .post("register", body)
+      .post("54.169.251.151/users", body)
       .then((res) => {
         const { message, data } = res.data;
         MySwal.fire({

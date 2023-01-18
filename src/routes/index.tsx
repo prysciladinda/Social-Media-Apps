@@ -14,8 +14,8 @@ import Profil from "../pages/profil";
 import Beranda from "../pages";
 import Login from "../pages/auth/Login";
 
-axios.defaults.baseURL =
-  "https://app.swaggerhub.com/apis/griffinhenry07/socialmedia/1.0.0/";
+// axios.defaults.baseURL =
+//   "https://app.swaggerhub.com/apis/griffinhenry07/socialmedia/1.0.0/";
 
 function App() {
   const [cookie, , removeCookie] = useCookies(["token"]);
