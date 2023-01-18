@@ -2,9 +2,20 @@ import { HiHome } from "react-icons/hi";
 import { CgProfile } from "react-icons/cg";
 import Abiasa from "../assets/Abiasa.png";
 import { Link, useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const [cookie, , removeCookie] = useCookies(["token"]);
+  const checkToken = cookie.token;
+
+  const handleLogout = async () => {
+    removeCookie("token");
+    // dispatch(handleAuth(false));
+    navigate("/login");
+    alert("You have been logged out");
+  };
+
   return (
     <div className="navbar sticky top-0 z-50 bg-base-100 flex justify-between px-6 shadow-[0px_1px_40px_0px_rgba(83,83,83,0.5)]">
       <div className="w-auto">
@@ -61,7 +72,11 @@ const Navbar = () => {
             <a>Dark Mode</a>
           </li>
           <li>
-            <a>Logout</a>
+            <button
+              onClick={() => (checkToken ? handleLogout() : navigate("/login"))}
+            >
+              {checkToken ? "Logout" : "Login"}
+            </button>
           </li>
         </ul>
       </div>
