@@ -36,6 +36,7 @@ function Register() {
   }, [name, email, password]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    console.log(handleSubmit); //console 1
     setLoading(true);
     e.preventDefault();
     const body = {
@@ -45,9 +46,10 @@ function Register() {
     };
 
     axios
-      .post("register", body)
+      .post("users", body)
       .then((res) => {
         const { message, data } = res.data;
+        console.log(res.data); //console2
         MySwal.fire({
           title: "Data was accepted . . .",
           text: message,
@@ -71,14 +73,16 @@ function Register() {
   return (
     <Layout>
       <div
-        className=" container lg:container md:container   sm:container w-full justify-center text-center flex justify-items-center pt-8
+        className=" container lg:container md:container sm:container w-full justify-center text-center flex justify-items-center pt-8
            h-auto pl-20"
       >
         <div
-          className="flex 
+          className="flex relative overflow-hidden 
         justify-around justify-items-center rounded-2xl  h-full pb-12 w-4/5 bg-white "
         >
-          <div className="pt-40 ">
+          <div className="w-[45rem] h-[60rem] rounded-[20%] rotate-[45deg] bg-[#2DCFC1] absolute z-10 top-[2rem] -left-[25rem]"></div>
+          <div className="w-[40rem] h-[30rem] rounded-[38%] rotate-[60deg] bg-[#BFFFF9] absolute top-10 -left-[9rem]"></div>
+          <div className="pt-40 z-50 ">
             <img className="pb-8 pl-16 w-4/5" src={logoOrang} />
             <p className="text-center text-white border-b-4 border-dotted pt-4">
               {" "}
@@ -107,28 +111,28 @@ function Register() {
               className="flex flex-col pt-8 gap-4 min-w-[40%]"
               onSubmit={(e) => handleSubmit(e)}
             >
-              <p className="text-start text-slate-500">Username</p>
-              <div className=" flex w-3/4 pl-4 flex-row gap-1 border items-center rounded-lg">
+              <p className="text-start text-slate-500 -mb-3">Username</p>
+              <div className=" flex w-3/4 h-11 pl-4 flex-row gap-1 border items-center rounded-lg ">
                 <BsFillPersonFill className="h-7 w-7 text-slate-400 " />
                 <Input
                   id="input-username"
                   type="username"
-                  placeholder="example : Budi Santoso"
+                  placeholder="Budi Santoso"
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
-              <p className="text-start text-slate-500">E-mail</p>
-              <div className=" flex w-3/4 pl-4 flex-row gap-1 border items-center rounded-lg">
+              <p className="text-start text-slate-500 -mb-3">E-mail</p>
+              <div className=" flex w-3/4 h-11 pl-4 flex-row gap-1 border items-center rounded-lg">
                 <MdEmail className="h-7 w-7 text-slate-400 " />
                 <Input
-                  id="input-username"
+                  id="input"
                   type="email"
                   placeholder=".......@gmail.com"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              <p className="text-start text-slate-500">Password</p>
-              <div className=" flex pl-5 w-3/4 items-center flex-row gap-1 border rounded-lg">
+              <p className="text-start text-slate-500 -mb-3">Password</p>
+              <div className=" flex pl-5 w-3/4 h-11 items-center flex-row gap-1 border rounded-lg">
                 <FaLock className="h-5 w-5 text-slate-400 " />
                 <Input
                   id="input-password"
@@ -139,8 +143,8 @@ function Register() {
               </div>
               <div className="flex justify-center pt-6">
                 <Button
-                  id="btn-register"
-                  label="Submit"
+                  id="btn-users"
+                  label="register"
                   loading={loading || disabled}
                 />
               </div>
