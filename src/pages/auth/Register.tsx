@@ -1,5 +1,4 @@
 import WithReactContent from "sweetalert2-react-content";
-import { useNavigate } from "react-router";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -13,15 +12,11 @@ import { Link, useNavigate } from "react-router-dom";
 import Layout from "../../components/Layout";
 import Input from "../../components/Input";
 
-
 import { BsFillPersonFill } from "react-icons/bs";
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 function Register() {
-
-  const navigate = useNavigate();
-
   const MySwal = WithReactContent(Swal);
   const navigate = useNavigate();
 
@@ -72,7 +67,6 @@ function Register() {
       })
       .finally(() => setLoading(false));
   };
-
 
   return (
     <Layout>
