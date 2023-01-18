@@ -4,6 +4,9 @@ import Layout from "../components/Layout";
 import Navbar from "../components/navbar";
 import SideNav from "../components/sideNav";
 
+import Profil from "../assets/profile.png";
+import Button from "../components/buttonRegister";
+
 const Aboutme = () => {
   return (
     <Layout>
@@ -14,10 +17,28 @@ const Aboutme = () => {
         </div>
         <div className="col-span-6">
           <div className="flex flex-col items-center w-full bg-zinc-50 rounded-3xl shadow-lg text-center p-5">
-            <p className="text-[24px] font-bold">About me</p>
-
+            <p className="text-[24px] font-bold mb-3">About me</p>
+            <img
+              className="w-28 h-28 border-2 border-zinc-600 rounded-full"
+              src={Profil}
+              alt="profil.png"
+            />
             <table className="w-9/12 mt-8 border-separate border-spacing-3">
               <tbody className="text-left">
+                <tr>
+                  <td className="pl-16">Upload Image :</td>
+                  <td className="item-center  rounded-full w-[15em]">
+                    <form action="">
+                      <input
+                        className="w-full"
+                        type="file"
+                        id="imgProfil"
+                        name="img"
+                        accept="image/*"
+                      />
+                    </form>
+                  </td>
+                </tr>
                 <tr>
                   <td className="pl-16">Username :</td>
                   <td className="item-center border rounded-full w-[15em]">
@@ -50,19 +71,7 @@ const Aboutme = () => {
                 </tr>
               </tbody>
             </table>
-
-            {/* <div className="flex flex-col">
-              <ul className="list-none">
-                <li>Username</li>
-                <li>E-mail</li>
-                <li>Password</li>
-              </ul>
-              <ul>
-                <li>Username</li>
-                <li>E-mail</li>
-                <li>Password</li>
-              </ul>
-            </div> */}
+            <Button id="submitAboutme" label="Submit" />
           </div>
         </div>
         <div className="col-span-3">
