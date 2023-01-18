@@ -3,15 +3,18 @@ import { CgProfile } from "react-icons/cg";
 import Abiasa from "../assets/Abiasa.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import { useDispatch } from "react-redux";
+import { handleAuth } from "../utils/redux/reducers/reducer";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [cookie, , removeCookie] = useCookies(["token"]);
   const checkToken = cookie.token;
+  const dispatch = useDispatch();
 
   const handleLogout = async () => {
     removeCookie("token");
-    // dispatch(handleAuth(false));
+    dispatch(handleAuth(false));
     navigate("/login");
     alert("You have been logged out");
   };
