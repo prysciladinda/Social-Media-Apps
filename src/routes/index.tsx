@@ -3,9 +3,9 @@ import {
   RouterProvider,
   Navigate,
 } from "react-router-dom";
+// import { useState, useEffect } from "react";
 import axios, { AxiosHeaders } from "axios";
 import { useCookies } from "react-cookie";
-// import { useState, useEffect } from "react";
 
 import Aboutme from "../pages/aboutme";
 import Register from "../pages/auth/Register";
@@ -14,8 +14,9 @@ import Profil from "../pages/profil";
 import Beranda from "../pages";
 import Login from "../pages/auth/Login";
 
-// axios.defaults.baseURL =
-//   "https://app.swaggerhub.com/apis/griffinhenry07/socialmedia/1.0.0/";
+
+axios.defaults.baseURL =
+  "https://vitserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/";
 
 function App() {
   const [cookie, , removeCookie] = useCookies(["token"]);
@@ -65,7 +66,7 @@ function App() {
       element: checkToken ? <Navigate to="/" /> : <Login />,
     },
     {
-      path: "/register",
+      path: "/users",
       element: checkToken ? <Navigate to="/" /> : <Register />,
     },
     {
