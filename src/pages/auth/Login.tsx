@@ -4,11 +4,13 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 import logoOrang from "../../assets/logo-orang.png";
 import logoAbiAsa from "../../assets/Abi-Asa.png";
+import { Link, useNavigate } from "react-router-dom";
 
 import { BsFillPersonFill } from "react-icons/bs";
 import { FaLock } from "react-icons/fa";
 
 function Login() {
+  const navigate = useNavigate();
   return (
     <Layout>
       <div
@@ -28,12 +30,14 @@ function Login() {
               and start journey with us
             </p>
             <div className="flex justify-center pt-9">
-              <Button label="Sign Up" />
+              <Button label="Sign Up" onClick={() => navigate("/register")} />
             </div>
           </div>
           <div className="w-2/5 ">
             <div className="flex pt-6  justify-end w-full h-20">
-              <img className="h-9" src={logoAbiAsa} />
+              <Link to="/">
+                <img className="h-9" src={logoAbiAsa} />
+              </Link>
             </div>
             <h1 className="text-center pb-4 text-4xl font-bold">Login</h1>
             <p className="text-center text-xs text-slate-400 border-b-4 pb-4 border-dashed">
