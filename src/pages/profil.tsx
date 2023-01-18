@@ -7,7 +7,7 @@ import Profile from "../assets/profile.png";
 import Backdrop from "../assets/backdrop.png";
 import Input from "../components/Input";
 import Iconupload from "../assets/uploadimage.png";
-import Button from "../components/Button";
+import Button from "../components/buttonRegister";
 
 const Profil = () => {
   return (
