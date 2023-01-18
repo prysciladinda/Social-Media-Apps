@@ -5,38 +5,39 @@ import logoOrang from "../../assets/logo-orang.png";
 import logoAbiAsa from "../../assets/Abi-Asa.png";
 import { Link, useNavigate } from "react-router-dom";
 
-import { MdEmail } from "react-icons/md";
+import { BsFillPersonFill } from "react-icons/bs";
 import { FaLock } from "react-icons/fa";
 import withReactContent from "sweetalert2-react-content";
 import React, { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import Swal from "../../utils/swal";
 import axios from "axios";
-// import { useDispatch } from "react";
+import { useDispatch } from "react-redux";
+import { handleAuth } from "../../utils/redux/reducers/reducer";
 
 function Login() {
-  const [, setCookie] = useCookies(["token"]);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
+  const [, setCookie] = useCookies(["token"]);
   const [disabled, setDisabled] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   const [password, setPassword] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  // const dispatch = useDispatch()
-  const navigate = useNavigate();
+  const [name, setName] = useState<string>("");
 
   useEffect(() => {
-    if (email && password) {
+    if (name && password) {
       setDisabled(false);
     } else {
       setDisabled(true);
     }
-  }, [email, password]);
+  }, [name, password]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setLoading(true);
     e.preventDefault();
     const body = {
-      email,
+      name,
       password,
     };
     axios
@@ -44,7 +45,7 @@ function Login() {
       .then((res) => {
         const { data, message } = res.data;
         setCookie("token", data.token, { path: "/" });
-        // dispatch(handleAuth(true));
+        dispatch(handleAuth(true));
         MySwal.fire({
           title: "Success",
           text: message,
@@ -97,14 +98,14 @@ function Login() {
               className="flex flex-col pt-9 gap-4 min-w-[40%] "
               onSubmit={(e) => handleSubmit(e)}
             >
-              <p className="text-start text-slate-500">E-mail</p>
+              <p className="text-start text-slate-500">Username</p>
               <div className=" flex w-3/4 pl-4 flex-row gap-1 border items-center rounded-lg">
-                <MdEmail className="h-7 w-7 text-slate-400 " />
+                <BsFillPersonFill className="h-7 w-7 text-slate-400 " />
                 <Input
                   id="input-username"
-                  type="email"
-                  placeholder=".......@gmail.com"
-                  onChange={(e) => setEmail(e.target.value)}
+                  type="username"
+                  placeholder="Budi Santoso"
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <p className="text-start text-slate-500">Password</p>
