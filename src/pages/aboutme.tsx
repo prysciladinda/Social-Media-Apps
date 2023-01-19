@@ -14,7 +14,7 @@ import Input from "../components/Input";
 
 import Swal from "../utils/swal";
 
-import Profil from "../assets/profile.png";
+import Profil from "../assets/profile.jpg";
 
 interface ProfileType {
   email?: string;
@@ -128,7 +128,7 @@ const Aboutme = () => {
               <img
                 className="w-28 h-28 border-2 border-zinc-600 rounded-full dark:border-zinc-100"
                 src={Profil}
-                alt="profil.png"
+                alt="profil.jpg"
               />
 
               <form className="w-9/12" onSubmit={(e) => handleSubmit(e)}>

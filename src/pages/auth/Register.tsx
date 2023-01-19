@@ -5,8 +5,8 @@ import axios from "axios";
 import Swal from "../../utils/swal";
 
 import Button from "../../components/buttonRegister";
-import logoOrang from "../../assets/logo-orang.png";
-import logoAbiAsa from "../../assets/Abi-Asa.png";
+import logoOrang from "../../assets/logo-orang.jpg";
+import logoAbiAsa from "../../assets/Abi-Asa.jpg";
 
 import { Link, useNavigate } from "react-router-dom";
 import Layout from "../../components/Layout";

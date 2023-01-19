@@ -1,4 +1,4 @@
-import Avatarcard from "../assets/sideNav.png";
+import Avatarcard from "../assets/sideNav.jpg";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -22,7 +22,7 @@ const Card: FC<cardProps> = ({ id, content, image_content }) => {
           <img
             className="w-10 h-10 rounded-full"
             src={Avatarcard}
-            alt="sideNav.png"
+            alt="sideNav.jpg"
           />
           <p className="inline font-semibold leading-10 dark:text-zinc-50">
             Anette Black

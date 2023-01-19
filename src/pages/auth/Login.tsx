@@ -1,8 +1,8 @@
 import Layout from "../../components/Layout";
 import Input from "../../components/Input";
 import Button from "../../components/buttonRegister";
-import logoOrang from "../../assets/logo-orang.png";
-import logoAbiAsa from "../../assets/Abi-Asa.png";
+import logoOrang from "../../assets/logo-orang.jpg";
+import logoAbiAsa from "../../assets/Abi-Asa.jpg";
 import { Link, useNavigate } from "react-router-dom";
 
 import { BsFillPersonFill } from "react-icons/bs";

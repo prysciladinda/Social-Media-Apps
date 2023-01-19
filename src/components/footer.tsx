@@ -1,4 +1,4 @@
-import Abiasa from "../assets/Abiasa_gray.png";
+import Abiasa from "../assets/AbiAsa_gray.jpg";
 
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";

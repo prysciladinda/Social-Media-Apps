@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import Navbar from "../components/navbar";
 import SideNav from "../components/sideNav";
 
-import Avatarcard from "../assets/sideNav.png";
+import Avatarcard from "../assets/sideNav.jpg";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -27,12 +27,32 @@ type commentType = {
 
 const Detail = () => {
   const { post_id } = useParams();
-
+  const [inputCom, setInputCom] = useState<string>("");
   const [data, setData] = useState<datasType>({});
 
   useEffect(() => {
     fetchDatas();
   }, []);
+
+  // function handlerDelete(){
+
+  // }
+  function handlerAddcom() {
+    const body = { inputCom };
+    axios
+      .post("http://18.142.182.200/comments", body)
+      .then((res) => {
+        console.log(res.data.data);
+        alert("sukses menambahkan data");
+      })
+      .catch((err) => {
+        alert(err.toString());
+      })
+      .finally(() => {
+        setInputCom("");
+        fetchDatas();
+      });
+  }
 
   function fetchDatas() {
     axios
@@ -63,7 +83,7 @@ const Detail = () => {
                 <img
                   className="w-10 h-10 rounded-full"
                   src={Avatarcard}
-                  alt="sideNav.png"
+                  alt="sideNav.jpg"
                 />
                 <p className="inline font-semibold leading-10">
                   {data.username}
@@ -87,6 +107,7 @@ const Detail = () => {
                   <p className="text-[14px] text-zinc-400 pt-1 pb-3">
                     Add a comment . . . . . . .
                   </p>
+
                   {data.comment?.map((item) => (
                     <p className="text-[14px] leading-6 mt-5">
                       <span className="font-bold">{data.username}</span>slay

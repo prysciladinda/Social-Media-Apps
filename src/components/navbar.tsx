@@ -8,6 +8,9 @@ import Abiasa from "../assets/Abiasa.png";
 
 import { HiHome } from "react-icons/hi";
 import { CgProfile } from "react-icons/cg";
+
+import Abiasa from "../assets/Abiasa.jpg";
+
 import { useCookies } from "react-cookie";
 import { useDispatch } from "react-redux";
 
@@ -57,7 +60,7 @@ const Navbar = () => {
 
       <div className="mr-[6rem]">
         <Link to="/">
-          <img className="w-36 pb-2" src={Abiasa} alt="Abiasa.png" />
+          <img className="w-36 pb-2" src={Abiasa} alt="Abiasa.jpg" />
         </Link>
       </div>
 
