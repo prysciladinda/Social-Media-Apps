@@ -4,13 +4,55 @@ import Navbar from "../components/navbar";
 import SideNav from "../components/sideNav";
 
 import Avatarcard from "../assets/sideNav.png";
-import Hinata from "../assets/hinata.jpg";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
+interface datasType {
+  id?: number;
+  post_id?: number;
+  content?: string;
+  image_content?: string;
+  username?: string;
+  user_pp?: string;
+  comment?: commentType[];
+  children?: React.ReactNode;
+}
+type commentType = {
+  comment_id?: number;
+  comment?: string;
+  username?: string;
+  children?: React.ReactNode;
+};
 
 const Detail = () => {
+  const { post_id } = useParams();
+
+  const [data, setData] = useState<datasType>({});
+
+  useEffect(() => {
+    fetchDatas();
+  }, []);
+
+  function fetchDatas() {
+    axios
+      .get(
+        `https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/posts/${post_id}`
+      )
+      .then((res) => {
+        // console.log(res.data.data);
+        setData(res.data.data);
+      })
+      .catch((err) => {
+        alert(err.toString());
+      });
+  }
+
   return (
     <Layout>
       <Navbar />
-
       <div>
         <div className="grid grid-cols-12 mt-10">
           <div className="col-span-3 h-11">
@@ -26,37 +68,32 @@ const Detail = () => {
                     alt="sideNav.png"
                   />
                   <p className="inline font-semibold leading-10">
-                    Anette Black
+                    {data.username}
                   </p>
                 </div>
                 <div>
                   <figure className="w-full h-96">
                     <img
                       className="object-contain"
-                      src={Hinata}
-                      alt="hinata.jpg"
+                      src={`https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/posts/${data.image_content}`}
                     />
                   </figure>
                 </div>
                 <div className="pt-5">
                   <p className="text-[14px] leading-6 border-b-2 pb-2">
-                    <span className="font-bold">Anetta Black</span> bukan
-                    sembarang anime, tapi anime kesukaan aku ya guys ya, kalau
-                    ada yang tanya ini anime apa, sini aku kasih tau ya. ini
-                    namanya anime haikyu ya, inget ya anime haikyu !!
+                    <span className="font-bold">{data.username}</span>
+                    {data.content}
                   </p>
                   <div className="">
                     <p className="text-[14px] text-zinc-400 pt-1 pb-3">
                       Add a comment . . . . . . .
                     </p>
                     <p className="text-[14px] leading-6 mt-5">
-                      <span className="font-bold">Anetta Black</span> bukan
-                      sembarang anime, tapi anime kesukaan aku ya guys ya, kalau
-                      ada yang tanya ini anime apa, sini aku kasih tau ya. ini
-                      namanya anime haikyu ya, inget ya anime haikyu !!
+                      <span className="font-bold">{data.username}</span>
                     </p>
+                    {/* {data.comment} */}
                     <p className="text-[14px] leading-6 mt-5">
-                      <span className="font-bold">Anetta Black</span> bukan
+                      <span className="font-bold">{data.username}</span> bukan
                       sembarang anime, tapi anime kesukaan aku ya guys ya, kalau
                       ada yang tanya ini anime apa, sini aku kasih tau ya. ini
                       namanya anime haikyu ya, inget ya anime haikyu !!
