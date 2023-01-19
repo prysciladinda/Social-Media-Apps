@@ -9,7 +9,7 @@ const Button: FC<ButtonProps> = ({ id, loading, label, ...props }) => {
   return (
     <button
       id={id}
-      className={`btn w-48 normal-case bg-hijaubotton border-white tracking-wider ${
+      className={`btn w-48 normal-case bg-hijaubotton border-white  dark:border-zinc-50 tracking-wider ${
         loading && "bg-[#00715C] cursor-not-allowed"
       }`}
       disabled={loading}

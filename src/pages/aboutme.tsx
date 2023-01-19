@@ -121,16 +121,18 @@ const Aboutme = () => {
           </div>
 
           <div className="col-span-6">
-            <div className="flex flex-col items-center w-full bg-zinc-50 rounded-3xl shadow-lg text-center p-5">
-              <p className="text-[24px] font-bold mb-3">About me</p>
+            <div className="flex flex-col items-center w-full bg-zinc-50 rounded-3xl shadow-lg text-center p-5 dark:bg-zinc-800">
+              <p className="text-[24px] font-bold mb-3 dark:text-zinc-50">
+                About me
+              </p>
               <img
-                className="w-28 h-28 border-2 border-zinc-600 rounded-full"
+                className="w-28 h-28 border-2 border-zinc-600 rounded-full dark:border-zinc-100"
                 src={Profil}
                 alt="profil.png"
               />
 
               <form className="w-9/12" onSubmit={(e) => handleSubmit(e)}>
-                <table className="mt-8 border-separate border-spacing-3">
+                <table className="mt-8 mb-5 border-separate border-spacing-3 dark:text-zinc-50">
                   <tbody className="text-left">
                     <tr>
                       <td className="pl-16">Upload Image :</td>

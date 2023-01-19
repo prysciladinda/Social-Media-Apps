@@ -3,16 +3,19 @@ import {
   RouterProvider,
   Navigate,
 } from "react-router-dom";
-// import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { useDispatch } from "react-redux";
 import axios, { AxiosHeaders } from "axios";
 import { useCookies } from "react-cookie";
 
-import Aboutme from "../pages/aboutme";
 import Register from "../pages/auth/Register";
+import Login from "../pages/auth/Login";
+import Aboutme from "../pages/aboutme";
 import Detail from "../pages/detail";
 import Profil from "../pages/profil";
 import Beranda from "../pages";
-import Login from "../pages/auth/Login";
+
+import { ThemeContext } from "../utils/context";
 
 function App() {
   const [cookie, , removeCookie] = useCookies(["token"]);
@@ -70,7 +73,25 @@ function App() {
       element: <Login />,
     },
   ]);
-  return <RouterProvider router={router} />;
+
+  // const App = () => {
+  const [theme, setTheme] = useState("light");
+  const background = useMemo(() => ({ theme, setTheme }), [theme]);
+
+  useEffect(() => {
+    console.log(theme);
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  return (
+    <ThemeContext.Provider value={background}>
+      <RouterProvider router={router} />;
+    </ThemeContext.Provider>
+  );
 }
 
 export default App;
