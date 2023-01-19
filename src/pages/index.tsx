@@ -14,6 +14,7 @@ interface datasType {
   content?: string;
   image_content?: string;
   names?: string;
+  // post_id?: number;
 }
 
 const Index = () => {
@@ -38,22 +39,6 @@ const Index = () => {
       });
   }
 
-  // function fetchName() {
-  //   axios
-  //     .get(
-  //       `https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/users`
-  //     )
-  //     .then((res) => {
-  //       // console.log(res);
-  //       setnames(res.data.data);
-  //     })
-  //     .catch((err) => {
-  //       alert(err.toString());
-  //     });
-  // }
-  // useEffect(() => {
-  //   fetchName();
-  // }, []);
   return (
     <Layout>
       <Navbar />
@@ -65,7 +50,6 @@ const Index = () => {
           {datas.map((datas) => (
             <Card
               key={datas.id}
-              // name={datas.names}
               content={datas.content}
               image_content={datas.image_content}
             />

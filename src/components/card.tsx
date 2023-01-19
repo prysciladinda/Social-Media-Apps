@@ -6,6 +6,7 @@ interface cardProps {
   id?: number;
   content?: string;
   image_content?: string;
+  // post_id: number;
 }
 const Card: FC<cardProps> = ({ id, content, image_content }) => {
   const navigate = useNavigate();
@@ -29,7 +30,12 @@ const Card: FC<cardProps> = ({ id, content, image_content }) => {
           <figure onClick={() => onClickDetail()} className="w-full h-96">
             <img
               className="object-contain"
-              src={`https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/posts/${image_content}`}
+              src={
+                `https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/posts/${image_content}` ===
+                null
+                  ? ""
+                  : `https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/posts/${image_content}`
+              }
             />
           </figure>
         </div>
