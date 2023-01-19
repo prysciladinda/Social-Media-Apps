@@ -3,10 +3,10 @@ import Footer from "../components/footer";
 import Layout from "../components/Layout";
 import Navbar from "../components/navbar";
 import SideNav from "../components/sideNav";
-import Profile from "../assets/profile.png";
-import Backdrop from "../assets/backdrop.png";
+import Profile from "../assets/profile.jpg";
+import Backdrop from "../assets/backdrop.jpg";
 import Input from "../components/Input";
-import Iconupload from "../assets/uploadimage.png";
+import Iconupload from "../assets/uploadimage.jpg";
 import Button from "../components/buttonRegister";
 
 const Profil = () => {

@@ -1,4 +1,4 @@
-// import Abiasa from "../assets/AbiAsa_gray.png";
+import Abiasa from "../assets/AbiAsa_gray.jpg";
 
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
@@ -8,7 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className="flex flex-col sticky top-[122px] left-0 items-center w-[16rem] ml-auto">
-      {/* <img className="w-16 h-16" src={Abiasa} alt="abiasa_gray.png" /> */}
+      <img className="w-16 h-16" src={Abiasa} alt="abiasa_gray.png" />
       <div className="font-bold text-center mt-6 text-[16px]">
         <p>Group Project Sosmed</p>
         <p>@alterra_academy</p>

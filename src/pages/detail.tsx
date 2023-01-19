@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import Navbar from "../components/navbar";
 import SideNav from "../components/sideNav";
 
-import Avatarcard from "../assets/sideNav.png";
+import Avatarcard from "../assets/sideNav.jpg";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -83,7 +83,7 @@ const Detail = () => {
                 <img
                   className="w-10 h-10 rounded-full"
                   src={Avatarcard}
-                  alt="sideNav.png"
+                  alt="sideNav.jpg"
                 />
                 <p className="inline font-semibold leading-10">
                   {data.username}
