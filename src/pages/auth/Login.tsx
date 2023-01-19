@@ -41,13 +41,11 @@ function Login() {
       password,
     };
     axios
-      .post(
-        "https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/login",
-        body
-      )
+      .post("http://18.142.182.200/login", body)
       .then((res) => {
         const { data, message } = res.data;
-        setCookie("token", data.token, { path: "/" });
+        console.log(res.data);
+        setCookie("token", data.token, { path: "/profile" });
         dispatch(handleAuth(true));
         MySwal.fire({
           title: "Success",

@@ -59,7 +59,7 @@ function App() {
     },
     {
       path: "/login",
-      element: checkToken ? <Navigate to="/" /> : <Login />,
+      element: checkToken ? <Navigate to="/profil" /> : <Login />,
     },
     {
       path: "/users",

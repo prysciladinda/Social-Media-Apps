@@ -10,7 +10,6 @@ const Detail = () => {
   return (
     <Layout>
       <Navbar />
-
       <div>
         <div className="grid grid-cols-12 mt-10">
           <div className="col-span-3 h-11">
