@@ -43,7 +43,7 @@ const Index = () => {
     <Layout>
       <Navbar />
       <div className="grid grid-cols-12 mt-10">
-        <div className="col-span-3 h-11">
+        <div className="col-span-3">
           <SideNav />
         </div>
         <div className="flex flex-col gap-4 col-span-6">

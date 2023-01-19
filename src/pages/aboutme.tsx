@@ -147,7 +147,7 @@ const Aboutme = () => {
                     <tr>
                       <td className="pl-16">Username :</td>
                       <td className="item-center border rounded-full w-[15em]">
-                        <Inputedit
+                        {/* <Inputedit
                           id="input-username"
                           type="text"
                           placeholder="username"
@@ -155,8 +155,8 @@ const Aboutme = () => {
                           onChange={
                             (e) => handleChange(e.target.value, "username") //ttd Noted
                           }
-                        />
-                        {/* <Input
+                        /> */}
+                        <Input
                           id="input_username"
                           type="username"
                           placeholder={username}
@@ -164,7 +164,7 @@ const Aboutme = () => {
                           onChange={(e) =>
                             handleChange(e.target.value, "username")
                           }
-                        /> */}
+                        />
                       </td>
                     </tr>
                     <tr>

@@ -53,7 +53,7 @@ const Detail = () => {
       <Navbar />
 
       <div className="grid grid-cols-12 mt-10">
-        <div className="col-span-3 h-11">
+        <div className="col-span-3">
           <SideNav />
         </div>
         <div className="flex flex-col gap-4 col-span-6">
@@ -72,7 +72,6 @@ const Detail = () => {
 
               <div>
                 <figure className="w-full h-96">
-
                   <img
                     className="object-contain"
                     src={`https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/posts/${data.image_content}`}
