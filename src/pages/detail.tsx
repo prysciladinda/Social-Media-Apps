@@ -2,6 +2,7 @@ import Footer from "../components/footer";
 import Layout from "../components/Layout";
 import Navbar from "../components/navbar";
 import SideNav from "../components/sideNav";
+import Input from "../components/Input";
 
 import Avatarcard from "../assets/sideNav.jpg";
 import axios from "axios";
@@ -103,9 +104,28 @@ const Detail = () => {
                   {data.content}
                 </p>
                 <div className="">
-                  <p className="text-[14px] text-zinc-400 pt-1 pb-3">
+                  <form>
+                    <Input
+                      className="w-4/5"
+                      id="input-comment"
+                      type="comment"
+                      value={inputCom}
+                      placeholder="add a comment"
+                      onChange={(e) => setInputCom(e.target.value)}
+                    />
+                    <button
+                      className="bg-slate-500 border rounded-lg w-24  text-white "
+                      // label="add comment"
+                      onClick={() => handlerAddcom}
+                      disabled={!inputCom}
+                    >
+                      send
+                    </button>
+                  </form>
+                  {/* <p className="text-[14px] text-zinc-400 pt-1 pb-3">
                     Add a comment . . . . . . .
-                  </p>
+
+                  </p> */}
 
                   {data.comment?.map((item) => (
                     <p className="text-[14px] leading-6 mt-5">
@@ -119,8 +139,9 @@ const Detail = () => {
                       likenya dong
                     </p>
                   ))}
+                  <button>edit </button>
+                  <button> delete</button>
                 </div>
-                <button>delete</button>
               </div>
             </div>
           </div>

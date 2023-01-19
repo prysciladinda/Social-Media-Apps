@@ -1,5 +1,4 @@
 import Sidenav from "../assets/sideNav.jpg";
-import SideNav from "./sideNav";
 
 const Avatar = () => {
   return (
