@@ -4,8 +4,6 @@ import { useContext } from "react";
 import { handleAuth } from "../utils/redux/reducers/reducer";
 import { ThemeContext } from "../utils/context";
 
-import Abiasa from "../assets/Abiasa.png";
-
 import { HiHome } from "react-icons/hi";
 import { CgProfile } from "react-icons/cg";
 
