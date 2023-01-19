@@ -79,7 +79,7 @@ function Register() {
       >
         <div
           className="flex relative overflow-hidden 
-        justify-around justify-items-center rounded-2xl  h-full pb-12 w-4/5 bg-white "
+        justify-around justify-items-center rounded-2xl  h-full pb-12 w-4/5 bg-white dark:bg-zinc-800"
         >
           <div className="w-[45rem] h-[60rem] rounded-[20%] rotate-[45deg] bg-[#2DCFC1] absolute z-10 top-[2rem] -left-[25rem]"></div>
           <div className="w-[40rem] h-[30rem] rounded-[38%] rotate-[60deg] bg-[#BFFFF9] absolute top-10 -left-[9rem]"></div>
@@ -97,23 +97,25 @@ function Register() {
             </div>
           </div>
           <div className="w-2/5 ">
-            <div className="flex pt-6  justify-end w-full h-20">
+            <div className="flex pt-6  justify-end w-full h-20 ">
               <Link to="/">
                 <img className="h-9" src={logoAbiAsa} />
               </Link>
             </div>
-            <h1 className="text-center pt-4 text-3xl font-bold">
+            <h1 className="text-center pt-4 text-3xl font-bold dark:text-zinc-50 ">
               Create Account
             </h1>
-            <p className="text-center text-xs text-slate-400 pb-4 border-b-4 border-dashed">
+            <p className="text-center text-xs text-slate-400 pb-4 border-b-4 border-dashed dark:text-zinc-50">
               Create your Account and Enjoy Together
             </p>
             <form
               className="flex flex-col pt-8 gap-4 min-w-[40%]"
               onSubmit={(e) => handleSubmit(e)}
             >
-              <p className="text-start text-slate-500 -mb-3">Username</p>
-              <div className=" flex w-3/4 h-11 pl-4 flex-row gap-1 border items-center rounded-lg ">
+              <p className="text-start text-slate-500 -mb-3 dark:text-zinc-50">
+                Username
+              </p>
+              <div className=" flex w-3/4 h-11 pl-4 flex-row gap-1 border items-center rounded-lg dark:bg-zinc-50">
                 <BsFillPersonFill className="h-7 w-7 text-slate-400 " />
                 <Input
                   id="input-username"
@@ -122,8 +124,10 @@ function Register() {
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
-              <p className="text-start text-slate-500 -mb-3">E-mail</p>
-              <div className=" flex w-3/4 h-11 pl-4 flex-row gap-1 border items-center rounded-lg">
+              <p className="text-start text-slate-500 -mb-3 dark:text-zinc-50">
+                E-mail
+              </p>
+              <div className=" flex w-3/4 h-11 pl-4 flex-row gap-1 border items-center rounded-lg dark:bg-zinc-50">
                 <MdEmail className="h-7 w-7 text-slate-400 " />
                 <Input
                   id="input"
@@ -132,8 +136,10 @@ function Register() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              <p className="text-start text-slate-500 -mb-3">Password</p>
-              <div className=" flex pl-5 w-3/4 h-11 items-center flex-row gap-1 border rounded-lg">
+              <p className="text-start text-slate-500 -mb-3 dark:text-zinc-50">
+                Password
+              </p>
+              <div className=" flex pl-5 w-3/4 h-11 items-center flex-row gap-1 border rounded-lg dark:bg-zinc-50">
                 <FaLock className="h-5 w-5 text-slate-400 " />
                 <Input
                   id="input-password"
