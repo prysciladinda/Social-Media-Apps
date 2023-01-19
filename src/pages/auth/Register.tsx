@@ -36,7 +36,6 @@ function Register() {
   }, [name, email, password]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    console.log(handleSubmit); //console 1
     setLoading(true);
     e.preventDefault();
     const body = {
@@ -44,12 +43,10 @@ function Register() {
       email,
       password,
     };
+    console.log(body); //console 1
 
     axios
-      .post(
-        "https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/users",
-        body
-      )
+      .post("http://18.142.182.200/register", body)
 
       .then((res) => {
         const { message, data } = res.data;
