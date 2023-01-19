@@ -1,10 +1,59 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+// import { useDispatch } from "react-redux";
+// import { useNavigate } from "react-router-dom";
+
 import Card from "../components/card";
 import Footer from "../components/footer";
 import Layout from "../components/Layout";
 import Navbar from "../components/navbar";
 import SideNav from "../components/sideNav";
 
+interface datasType {
+  id?: number;
+  content?: string;
+  image_content?: string;
+  names?: string;
+}
+
 const Index = () => {
+  // const dispatch = useDispatch();
+  const [datas, setDatas] = useState<datasType[]>([]);
+  // const [names, setnames] = useState<datasType[]>([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  function fetchData() {
+    axios
+      .get(
+        `https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/posts`
+      )
+      .then((res) => {
+        setDatas(res.data.data);
+      })
+      .catch((err) => {
+        alert(err.toString());
+      });
+  }
+
+  // function fetchName() {
+  //   axios
+  //     .get(
+  //       `https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/users`
+  //     )
+  //     .then((res) => {
+  //       // console.log(res);
+  //       setnames(res.data.data);
+  //     })
+  //     .catch((err) => {
+  //       alert(err.toString());
+  //     });
+  // }
+  // useEffect(() => {
+  //   fetchName();
+  // }, []);
   return (
     <Layout>
       <Navbar />
@@ -13,8 +62,14 @@ const Index = () => {
           <SideNav />
         </div>
         <div className="flex flex-col gap-4 col-span-6">
-          <Card />
-          <Card />
+          {datas.map((datas) => (
+            <Card
+              key={datas.id}
+              // name={datas.names}
+              content={datas.content}
+              image_content={datas.image_content}
+            />
+          ))}
         </div>
         <div className="col-span-3">
           <Footer />
