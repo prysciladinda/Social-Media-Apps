@@ -82,7 +82,7 @@ const Detail = () => {
               <div className="flex gap-2 py-3 px-1">
                 <img
                   className="w-10 h-10 rounded-full"
-                  src={Avatarcard}
+                  src={"https://placeimg.com/80/80/people"}
                   alt="sideNav.jpg"
                 />
                 <p className="inline font-semibold leading-10">
@@ -121,6 +121,7 @@ const Detail = () => {
                     </p>
                   ))}
                 </div>
+                <button>delete</button>
               </div>
             </div>
           </div>

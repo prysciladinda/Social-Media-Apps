@@ -17,7 +17,7 @@ const Profil = () => {
         <div className="flex justify-center w-full">
           <img
             className="w-[120px] rounded-full border-4 border-zinc-50"
-            src={Profile}
+            src={"https://placeimg.com/80/80/people"}
             alt="Profil.jpg"
           />
         </div>
@@ -28,7 +28,7 @@ const Profil = () => {
           }}
         >
           <p className="w-full text-zinc-900 font-bold text-[36px] leading-[150px] ">
-            Dianna Puspitasari
+            Anette Black
           </p>
         </div>
       </div>
