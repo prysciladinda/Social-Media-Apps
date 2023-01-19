@@ -18,13 +18,11 @@ interface datasType {
   username?: string;
   user_pp?: string;
   comment?: commentType[];
-  children?: React.ReactNode;
 }
 type commentType = {
   comment_id?: number;
   comment?: string;
   username?: string;
-  children?: React.ReactNode;
 };
 
 const Detail = () => {
@@ -53,59 +51,60 @@ const Detail = () => {
   return (
     <Layout>
       <Navbar />
-      <div>
-        <div className="grid grid-cols-12 mt-10">
-          <div className="col-span-3 h-11">
-            <SideNav />
-          </div>
-          <div className="flex flex-col gap-4 col-span-6">
-            <div className="flex justify-center w-full ">
-              <div className="card w-[40vw] bg-base-100 shadow-xl p-4 pb-9">
-                <div className="flex gap-2 py-3 px-1">
+      <div className="grid grid-cols-12 mt-10">
+        <div className="col-span-3 h-11">
+          <SideNav />
+        </div>
+        <div className="flex flex-col gap-4 col-span-6">
+          <div className="flex justify-center w-full ">
+            <div className="card w-[40vw] bg-base-100 shadow-xl p-4 pb-9">
+              <div className="flex gap-2 py-3 px-1">
+                <img
+                  className="w-10 h-10 rounded-full"
+                  src={Avatarcard}
+                  alt="sideNav.png"
+                />
+                <p className="inline font-semibold leading-10">
+                  {data.username}
+                </p>
+              </div>
+
+              <div>
+                <figure className="w-full h-96">
                   <img
-                    className="w-10 h-10 rounded-full"
-                    src={Avatarcard}
-                    alt="sideNav.png"
+                    className="object-contain"
+                    src={`https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/posts/${data.image_content}`}
                   />
-                  <p className="inline font-semibold leading-10">
-                    {data.username}
+                </figure>
+              </div>
+              <div className="pt-5">
+                <p className="text-[14px] leading-6 border-b-2 pb-2">
+                  <span className="font-bold">{data.username}</span>
+                  {data.content}
+                </p>
+                <div className="">
+                  <p className="text-[14px] text-zinc-400 pt-1 pb-3">
+                    Add a comment . . . . . . .
                   </p>
-                </div>
-                <div>
-                  <figure className="w-full h-96">
-                    <img
-                      className="object-contain"
-                      src={`https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/posts/${data.image_content}`}
-                    />
-                  </figure>
-                </div>
-                <div className="pt-5">
-                  <p className="text-[14px] leading-6 border-b-2 pb-2">
-                    <span className="font-bold">{data.username}</span>
-                    {data.content}
-                  </p>
-                  <div className="">
-                    <p className="text-[14px] text-zinc-400 pt-1 pb-3">
-                      Add a comment . . . . . . .
-                    </p>
+                  {data.comment?.map((item) => (
                     <p className="text-[14px] leading-6 mt-5">
-                      <span className="font-bold">{data.username}</span>
+                      <span className="font-bold">{data.username}</span>slay
+                      girl minta likenya dong
                     </p>
-                    {/* {data.comment} */}
+                  ))}
+                  {data.comment?.map((item) => (
                     <p className="text-[14px] leading-6 mt-5">
-                      <span className="font-bold">{data.username}</span> bukan
-                      sembarang anime, tapi anime kesukaan aku ya guys ya, kalau
-                      ada yang tanya ini anime apa, sini aku kasih tau ya. ini
-                      namanya anime haikyu ya, inget ya anime haikyu !!
+                      <span className="font-bold">{data.username}</span> minta
+                      likenya dong
                     </p>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-span-3">
-            <Footer />
-          </div>
+        </div>
+        <div className="col-span-3">
+          <Footer />
         </div>
       </div>
     </Layout>
