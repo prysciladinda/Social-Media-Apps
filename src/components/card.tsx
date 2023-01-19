@@ -22,7 +22,6 @@ const Card: FC<cardProps> = ({ id, content, image_content }) => {
           <img
             className="w-10 h-10 rounded-full"
             src={"https://placeimg.com/80/80/people"}
-            alt="sideNav.jpg"
           />
           <p className="inline font-semibold leading-10 dark:text-zinc-50">
             Anette Black
