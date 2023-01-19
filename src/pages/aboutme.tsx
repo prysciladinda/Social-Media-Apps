@@ -128,7 +128,6 @@ const Aboutme = () => {
               <img
                 className="w-28 h-28 border-2 border-zinc-600 rounded-full dark:border-zinc-100"
                 src={Profil}
-                alt="profil.jpg"
               />
 
               <form className="w-9/12" onSubmit={(e) => handleSubmit(e)}>

@@ -58,7 +58,7 @@ const Navbar = () => {
 
       <div className="mr-[6rem]">
         <Link to="/">
-          <img className="w-36 pb-2" src={Abiasa} alt="Abiasa.jpg" />
+          <img className="w-36 pb-2" src={Abiasa} />
         </Link>
       </div>
 

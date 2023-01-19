@@ -18,7 +18,6 @@ const Profil = () => {
           <img
             className="w-[120px] rounded-full border-4 border-zinc-50"
             src={"https://placeimg.com/80/80/people"}
-            alt="Profil.jpg"
           />
         </div>
         <div
