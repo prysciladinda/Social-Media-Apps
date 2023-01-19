@@ -89,7 +89,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={background}>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </ThemeContext.Provider>
   );
 }
