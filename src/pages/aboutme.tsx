@@ -114,7 +114,7 @@ const Aboutme = () => {
   return (
     <Layout>
       <>
-        <Navbar />
+        <Navbar key={username} username={username} />
         <div className="grid grid-cols-12 mt-10">
           <div className="col-span-3">
             <SideNav />
