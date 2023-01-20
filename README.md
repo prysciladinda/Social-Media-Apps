@@ -2,6 +2,12 @@ SOCIAL MEDIA APP
 
 Deployment:https://social-media-apps.vercel.app/
 
+Audi Zulfiqar keiso (BE)
+Kwee Griffin Henry (BE)
+Pryscila Dinda Eliana (FE)
+M Agung Cahya Diyanto (FE)
+
+
 # Getting Started with vite
 
 
