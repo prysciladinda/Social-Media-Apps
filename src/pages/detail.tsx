@@ -78,13 +78,13 @@ const Detail = () => {
         </div>
         <div className="flex flex-col gap-4 col-span-6">
           <div className="flex justify-center w-full ">
-            <div className="card w-[40vw] bg-base-100 shadow-xl p-4 pb-9">
+            <div className="card w-[40vw] bg-base-100 shadow-xl p-4 pb-9 dark:bg-zinc-800">
               <div className="flex gap-2 py-3 px-1">
                 <img
                   className="w-10 h-10 rounded-full"
                   src={"https://placeimg.com/80/80/people"}
                 />
-                <p className="inline font-semibold leading-10">
+                <p className="inline font-semibold leading-10 dark:text-zinc-50">
                   {data.username}
                 </p>
               </div>
@@ -97,9 +97,9 @@ const Detail = () => {
                   />
                 </figure>
               </div>
-              <div className="pt-5">
+              <div className="pt-5 dark:text-zinc-50">
                 <p className="text-[14px] leading-6 border-b-2 pb-2">
-                  <span className="font-bold">{data.username}</span>
+                  <span className="font-bold">{data.username}</span>{" "}
                   {data.content}
                 </p>
                 <div className="">

@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, FC } from "react";
+import axios from "axios";
 
 import { handleAuth } from "../utils/redux/reducers/reducer";
 import { ThemeContext } from "../utils/context";
@@ -12,7 +14,15 @@ import Abiasa from "../assets/Abiasa.jpg";
 import { useCookies } from "react-cookie";
 import { useDispatch } from "react-redux";
 
-const Navbar = () => {
+interface NavType {
+  id?: number;
+  username?: string;
+}
+
+const Navbar: FC<NavType> = () => {
+  const [username, setUsername] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(true);
+
   const navigate = useNavigate();
   const [cookie, , removeCookie] = useCookies(["token"]);
   const checkToken = cookie.token;
@@ -22,6 +32,26 @@ const Navbar = () => {
 
   function handleTheme() {
     theme === "light" ? setTheme("dark") : setTheme("light");
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  function fetchData() {
+    axios
+      .get(
+        "https://virtserver.swaggerhub.com/griffinhenry07/socialmedia/1.0.0/users"
+      )
+      .then((res) => {
+        const { username, email } = res.data;
+        setUsername(username);
+        // console.log(username);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => setLoading(false));
   }
 
   const handleLogout = async () => {
@@ -65,7 +95,7 @@ const Navbar = () => {
       <div className="dropdown dropdown-end ">
         <div className="flex">
           <p className="text-[#2A3342] text-[14px] text-center px-2 py-2 font-semibold dark:text-zinc-50">
-            Anette Black
+            {username}
           </p>
           <label tabIndex={0} className="w-10 h-10 avatar online">
             <div className="rounded-full">
