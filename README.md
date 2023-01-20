@@ -3,8 +3,11 @@ SOCIAL MEDIA APP
 Deployment:https://social-media-apps.vercel.app/
 
 Audi Zulfiqar keiso (BE)
+<br />
 Kwee Griffin Henry (BE)
+<br />
 Pryscila Dinda Eliana (FE)
+<br />
 M Agung Cahya Diyanto (FE)
 
 
